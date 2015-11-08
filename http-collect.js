@@ -8,10 +8,7 @@ http.get(url, function(res) {
   res.pipe(bl(function (err,data) {
     if (err) { return console.error(err) }
     data = data.toString();
-    var char = data.split('').map(function(char){
-      return char; 
-    });
-    console.log(char.length);
+    console.log(data.length);
     console.log(data);
   }));
 })
