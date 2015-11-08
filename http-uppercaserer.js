@@ -9,6 +9,9 @@ let server = http.createServer(function (req, res) {
   }
 
   // do the transforms using through2
+  req.pipe(map(function(chunk){
+    return chunk.toString().toUpperCase();
+  })).pipe(res);
 
 });
 
